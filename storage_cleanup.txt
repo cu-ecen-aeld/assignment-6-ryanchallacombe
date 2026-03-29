@@ -1,0 +1,26 @@
+ryan@Ubuntu22:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           776M  1.6M  774M   1% /run
+/dev/sda3        99G   55G   40G  59% /
+tmpfs           3.8G     0  3.8G   0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /run/qemu
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           776M  140K  775M   1% /run/user/1000
+/dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2
+
+
+ryan@Ubuntu22:~/projects/assignment-4-ryanchallacombe$ du -sh /home/ryan/projects/assignment-4-ryanchallacombe/buildroot/
+12G	/home/ryan/projects/assignment-4-ryanchallacombe/buildroot/
+
+# after removing buildroot dir we have....
+ryan@Ubuntu22:~/projects/assignment-4-ryanchallacombe$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           776M  1.6M  774M   1% /run
+/dev/sda3        99G   43G   51G  47% /
+tmpfs           3.8G   53M  3.8G   2% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /run/qemu
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           776M  160K  775M   1% /run/user/1000
+/dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2

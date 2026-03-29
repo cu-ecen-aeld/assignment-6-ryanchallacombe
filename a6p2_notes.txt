@@ -1,0 +1,47 @@
+ryan@Ubuntu22:~/projects$ git clone git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git
+Cloning into 'assignments-3-and-later-ryanchallacombe'...
+remote: Enumerating objects: 649, done.
+remote: Counting objects: 100% (94/94), done.
+remote: Compressing objects: 100% (58/58), done.
+remote: Total 649 (delta 49), reused 72 (delta 29), pack-reused 555 (from 1)
+Receiving objects: 100% (649/649), 5.44 MiB | 16.51 MiB/s, done.
+Resolving deltas: 100% (307/307), done.
+ryan@Ubuntu22:~/projects$ cd assignments-3-and-later-ryanchallacombe/
+
+yan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ git remote add yocto-assignments-base https://github.com/cu-ecen-aeld/yocto-assignments-base.git
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ git remote -v
+origin	git@github.com:cu-ecen-aeld/assignment-6-ryanchallacombe.git (fetch)
+origin	git@github.com:cu-ecen-aeld/assignment-6-ryanchallacombe.git (push)
+yocto-assignments-base	https://github.com/cu-ecen-aeld/yocto-assignments-base.git (fetch)
+yocto-assignments-base	https://github.com/cu-ecen-aeld/yocto-assignments-base.git (push)
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ git fetch yocto-assignments-base 
+remote: Enumerating objects: 35, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 35 (delta 17), reused 17 (delta 17), pack-reused 16 (from 1)
+Unpacking objects: 100% (35/35), 3.94 KiB | 672.00 KiB/s, done.
+From https://github.com/cu-ecen-aeld/yocto-assignments-base
+ * [new branch]      assignment-6-f22-updates -> yocto-assignments-base/assignment-6-f22-updates
+ * [new branch]      assignment7              -> yocto-assignments-base/assignment7
+ * [new branch]      assignment8              -> yocto-assignments-base/assignment8
+ * [new branch]      assignment9              -> yocto-assignments-base/assignment9
+ * [new branch]      master                   -> yocto-assignments-base/master
+ * [new branch]      s23updates               -> yocto-assignments-base/s23updates
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ git merge yocto-assignments-base/master 
+Already up to date.
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ git submodule update --init --recursive
+Submodule 'assignment-autotest' (https://github.com/cu-ecen-aeld/assignment-autotest.git) registered for path 'assignment-autotest'
+Submodule 'poky' (https://git.yoctoproject.org/git/poky) registered for path 'poky'
+Cloning into '/home/ryan/projects/assignment-6-ryanchallacombe/assignment-autotest'...
+Cloning into '/home/ryan/projects/assignment-6-ryanchallacombe/poky'...
+Submodule path 'assignment-autotest': checked out '83e5dfa52a482c76980e69e1f231c32a03c68910'
+Submodule 'Unity' (https://github.com/ThrowTheSwitch/Unity.git) registered for path 'assignment-autotest/Unity'
+Cloning into '/home/ryan/projects/assignment-6-ryanchallacombe/assignment-autotest/Unity'...
+Submodule path 'assignment-autotest/Unity': checked out 'ae8b98e80b716eb6c627f1c98261ffe9f9d3acca'
+Submodule path 'poky': checked out 'cf615e1d3bde7e5cb53b56b67954bc6e75bbb1d6'
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ git remote -v
+origin	git@github.com:cu-ecen-aeld/assignment-6-ryanchallacombe.git (fetch)
+origin	git@github.com:cu-ecen-aeld/assignment-6-ryanchallacombe.git (push)
+yocto-assignments-base	https://github.com/cu-ecen-aeld/yocto-assignments-base.git (fetch)
+yocto-assignments-base	https://github.com/cu-ecen-aeld/yocto-assignments-base.git (push)
+
