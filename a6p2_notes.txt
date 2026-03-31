@@ -98,3 +98,21 @@ Cloning into '/home/ryan/projects/assignments-3-and-later-ryanchallacombe/assign
 Submodule path 'assignment-autotest/Unity': checked out 'ae8b98e80b716eb6c627f1c98261ffe9f9d3acca'
 ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git remote get-url origin
 git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git
+
+# add yocto required packages per this link:
+https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-packages
+
+sudo apt-get install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
+
+# space check:
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           776M  1.5M  774M   1% /run
+/dev/sda3        99G   44G   50G  47% /
+tmpfs           3.8G   51M  3.8G   2% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /run/qemu
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           776M  156K  775M   1% /run/user/1000
+/dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2
+
