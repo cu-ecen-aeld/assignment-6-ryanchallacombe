@@ -45,3 +45,56 @@ origin	git@github.com:cu-ecen-aeld/assignment-6-ryanchallacombe.git (push)
 yocto-assignments-base	https://github.com/cu-ecen-aeld/yocto-assignments-base.git (fetch)
 yocto-assignments-base	https://github.com/cu-ecen-aeld/yocto-assignments-base.git (push)
 
+# assignments 3 repo setup
+... clone ....
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git remote add assignments-base git@github.com:cu-ecen-aeld/aesd-assignments.git 
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ remote -v
+Command 'remote' not found, but can be installed with:
+snap install remote
+Please ask your administrator.
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git remote -v
+assignments-base	git@github.com:cu-ecen-aeld/aesd-assignments.git (fetch)
+assignments-base	git@github.com:cu-ecen-aeld/aesd-assignments.git (push)
+origin	git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git (fetch)
+origin	git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git (push)
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git merge assignments-base/assignment6
+merge: assignments-base/assignment6 - not something we can merge
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git fetch assignments-base 
+remote: Enumerating objects: 104, done.
+remote: Counting objects: 100% (44/44), done.
+remote: Compressing objects: 100% (19/19), done.
+remote: Total 104 (delta 24), reused 27 (delta 21), pack-reused 60 (from 2)
+Receiving objects: 100% (104/104), 17.81 KiB | 607.00 KiB/s, done.
+Resolving deltas: 100% (40/40), completed with 8 local objects.
+From github.com:cu-ecen-aeld/aesd-assignments
+ * [new branch]      actions-v4                 -> assignments-base/actions-v4
+ * [new branch]      assignment2                -> assignments-base/assignment2
+ * [new branch]      assignment3-part-1         -> assignments-base/assignment3-part-1
+ * [new branch]      assignment3-part-2         -> assignments-base/assignment3-part-2
+ * [new branch]      assignment4                -> assignments-base/assignment4
+ * [new branch]      assignment5                -> assignments-base/assignment5
+ * [new branch]      assignment6                -> assignments-base/assignment6
+ * [new branch]      assignment7                -> assignments-base/assignment7
+ * [new branch]      assignment8                -> assignments-base/assignment8
+ * [new branch]      assignment9                -> assignments-base/assignment9
+ * [new branch]      f24-assignment2            -> assignments-base/f24-assignment2
+ * [new branch]      f24-container-update       -> assignments-base/f24-container-update
+ * [new branch]      finder-test-fix            -> assignments-base/finder-test-fix
+ * [new branch]      master                     -> assignments-base/master
+ * [new branch]      master+f25-upgrades        -> assignments-base/master+f25-upgrades
+ * [new branch]      update-assignment-autotest -> assignments-base/update-assignment-autotest
+ * [new branch]      yaml-fix-A3P1              -> assignments-base/yaml-fix-A3P1
+ * [new branch]      yaml-fix-A3P2              -> assignments-base/yaml-fix-A3P2
+ * [new branch]      yaml-fix-a1                -> assignments-base/yaml-fix-a1
+ * [new branch]      yaml-fix-a2                -> assignments-base/yaml-fix-a2
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git merge assignments-base/assignment6
+Already up to date.
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git submodule update --init --recursive
+Submodule 'assignment-autotest' (https://github.com/cu-ecen-aeld/assignment-autotest.git) registered for path 'assignment-autotest'
+Cloning into '/home/ryan/projects/assignments-3-and-later-ryanchallacombe/assignment-autotest'...
+Submodule path 'assignment-autotest': checked out 'a421651f00a585e488572e9db94d896d364cfc5f'
+Submodule 'Unity' (https://github.com/ThrowTheSwitch/Unity.git) registered for path 'assignment-autotest/Unity'
+Cloning into '/home/ryan/projects/assignments-3-and-later-ryanchallacombe/assignment-autotest/Unity'...
+Submodule path 'assignment-autotest/Unity': checked out 'ae8b98e80b716eb6c627f1c98261ffe9f9d3acca'
+ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ git remote get-url origin
+git@github.com:cu-ecen-aeld/assignments-3-and-later-ryanchallacombe.git
