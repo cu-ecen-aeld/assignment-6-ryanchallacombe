@@ -9,7 +9,7 @@ SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-ryanchallac
 
 PV = "1.0+git${SRCPV}"
 # TODO: set to reference a specific commit hash in your assignment repo
-SRCREV = "5b462ae163aef3a06353f2f82ee180e6ecdd7326"
+SRCREV = "61efa1cd0cfbf7320e99ce09d1fd0734f8ef79b6"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
@@ -54,6 +54,6 @@ do_install () {
 	# install init.d dir	
 	install -d ${D}${sysconfdir}/init.d
 
-	install -m ${S}/aesdsocket-start-stop.sh ${D}${sysconfdir}/init.d
-	install -m ${S}/aesdsocket ${D}${bindir}/
+	install -m 0755 ${S}/aesdsocket-start-stop.sh ${D}${sysconfdir}/init.d
+	install -m 0755 ${S}/aesdsocket ${D}${bindir}/
 }
