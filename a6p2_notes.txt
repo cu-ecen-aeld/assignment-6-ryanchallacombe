@@ -104,6 +104,8 @@ https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-package
 
 sudo apt-get install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
 
+installed lz4
+
 # space check:
 ryan@Ubuntu22:~/projects/assignments-3-and-later-ryanchallacombe$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -116,3 +118,63 @@ tmpfs           3.8G     0  3.8G   0% /run/qemu
 tmpfs           776M  156K  775M   1% /run/user/1000
 /dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2
 
+# 4/1/2026
+# after build run in which my laptop updated and restarted.... status of build may be partial
+ryan@Ubuntu22:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           776M  1.5M  774M   1% /run
+/dev/sda3        99G   87G  7.2G  93% /
+tmpfs           3.8G  3.1M  3.8G   1% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /run/qemu
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           776M  136K  775M   1% /run/user/1000
+/dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2
+
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ du -s -h
+42G
+
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ ./runqemu.sh 
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+    core-image-minimal
+    core-image-full-cmdline
+    core-image-sato
+    core-image-weston
+    meta-toolchain
+    meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
+
+Other commonly useful commands are:
+ - 'devtool' and 'recipetool' handle common recipe tasks
+ - 'bitbake-layers' handles common layer tasks
+ - 'oe-pkgdata-util' handles common target package tasks
+runqemu - INFO - Running bitbake -e ...
+ls: cannot access '/home/ryan/projects/assignment-6-ryanchallacombe/build/tmp/deploy/images/qemuarm64/*.qemuboot.conf': No such file or directory
+runqemu - ERROR - Command 'ls -t /home/ryan/projects/assignment-6-ryanchallacombe/build/tmp/deploy/images/qemuarm64/*.qemuboot.conf' returned non-zero exit status 2.
+runqemu - INFO - Cleaning up
+runqemu - INFO - Host uptime: 961.21
+
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ ls -l build/tmp/
+total 124
+-rw-rw-r-- 1 ryan ryan     2 Mar 31 19:58 abi_version
+drwxrwxr-x 3 ryan ryan  4096 Mar 31 20:00 buildstats
+drwxrwxr-x 3 ryan ryan  4096 Mar 31 19:58 cache
+drwxr-xr-x 2 ryan ryan  4096 Mar 31 22:09 deploy
+drwxrwxr-x 2 ryan ryan  4096 Mar 31 19:58 hosttools
+drwxrwxr-x 3 ryan ryan  4096 Mar 31 19:58 log
+drwxr-xr-x 3 ryan ryan  4096 Mar 31 22:09 pkgdata
+-rw-rw-r-- 1 ryan ryan    58 Mar 31 19:58 saved_tmpdir
+drwxrwxr-x 2 ryan ryan 69632 Apr  1 00:14 sstate-control
+drwxrwxr-x 7 ryan ryan  4096 Mar 31 20:01 stamps
+drwxr-xr-x 7 ryan ryan  4096 Mar 31 21:42 sysroots-components
+drwxr-xr-x 3 ryan ryan  4096 Apr  5  2011 sysroots-uninative
+drwxr-xr-x 6 ryan ryan  4096 Mar 31 20:10 work
+drwxr-xr-x 4 ryan ryan  4096 Mar 31 21:46 work-shared
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ ls -l build/tmp/deploy/
+total 0
