@@ -178,3 +178,30 @@ drwxr-xr-x 6 ryan ryan  4096 Mar 31 20:10 work
 drwxr-xr-x 4 ryan ryan  4096 Mar 31 21:46 work-shared
 ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ ls -l build/tmp/deploy/
 total 0
+
+# Now remove build dir to get space
+Start
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           776M  1.8M  774M   1% /run
+/dev/sda3        99G   88G  6.3G  94% /
+tmpfs           3.8G   76M  3.8G   2% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /run/qemu
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           776M  160K  775M   1% /run/user/1000
+/dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2
+
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ sudo rm  -rf build/
+[sudo] password for ryan: 
+
+ryan@Ubuntu22:~/projects/assignment-6-ryanchallacombe$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           776M  1.8M  774M   1% /run
+/dev/sda3        99G   35G   59G  38% /
+tmpfs           3.8G   76M  3.8G   2% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           3.8G     0  3.8G   0% /run/qemu
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           776M  160K  775M   1% /run/user/1000
+/dev/sr0         51M   51M     0 100% /media/ryan/VBox_GAs_7.2.2
